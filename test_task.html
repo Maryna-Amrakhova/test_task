@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	
+	<script>
+         
+        const words = 'The Tao gave birth to machine language Machine language gave birth to the assembler The assembler gave birth to the compiler Now there are ten thousand languages Each language has its purpose however humble Each language expresses the Yin and Yang of software Each language has its place within the Tao But do not program in COBOL if you can avoid it Geoffrey James The Tao of Programming';
+
+		const wordArrey = words.split(' ');
+
+		const result = [];
+
+		for (i = 0; i < wordArrey.length; i++) {
+
+			if(	isFirstUniqueCharInWord(wordArrey[i])) {
+			
+			let tempFirst = wordArrey[i].charAt(0);
+                
+                result.push(tempFirst);			
+			}
+					
+		 // console.log(wordArrey[i]);
+		}
+
+		const letterResult = result.find((x) => result.indexOf(x) === result.lastIndexOf(x));
+
+		console.log(letterResult);
+        
+
+		function isFirstUniqueCharInWord (word) {
+
+			let firstChar = word.charAt(0);
+			let number = word.split(firstChar).length - 1;
+
+			if (number === 1) {
+
+				return true;
+			}
+			
+			else {
+				// console.log ('more than one char ' + word );
+				return false};
+			}
+
+		
+	</script>
+
+
+</body>
+</html>
